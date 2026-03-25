@@ -10,7 +10,7 @@ function Dessert() {
         <img src={imageWaffleMobile} alt="" className='rounded-md'/>
         <button className='add-to-cart-btn absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2'>
           <img src={addToCartSvg} alt="" className='h-5 w-5'/>
-          <span>Add to cart</span>
+          <span className='text-preset-4-bold text-rose-900'>Add to cart</span>
         </button>
       </div>
 
