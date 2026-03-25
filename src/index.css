@@ -12,10 +12,36 @@
     --color-rose-900: hsl(14, 65%, 9%);
 
     --font-sans: "Red Hat Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 24px;
+    --text-xl: 40px
+
   }
 
   @layer base {
     body{
         @apply font-sans;
+    }
+
+    .text-preset-1{
+        @apply text-rose-900 font-bold leading-[120%] tracking-normal text-xl;
+    }
+
+    .text-preset-2{
+        @apply  text-rose-900 font-bold leading-[125%] tracking-normal text-lg;
+    }
+
+    .text-preset-3{
+        @apply  text-rose-900 font-semibold leading-[150%] tracking-normal text-base;
+    }
+
+    .text-preset-4{
+        @apply  text-rose-900 leading-[150%] tracking-normal text-sm;
+    }
+
+    .text-preset-4-bold{
+        @apply  text-rose-900 font-semibold leading-[150%] tracking-normal text-sm;
     }
   }
