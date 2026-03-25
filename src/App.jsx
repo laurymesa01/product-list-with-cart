@@ -1,10 +1,11 @@
 import './App.css'
+import Desserts from './components/Desserts'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-preset-3'> Holaaaaa</h1>
+      <Desserts/>
     </>
   )
 }

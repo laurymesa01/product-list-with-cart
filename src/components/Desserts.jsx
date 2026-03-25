@@ -1,8 +1,9 @@
 import React from 'react'
+import Dessert from './Dessert'
 
 function Desserts() {
   return (
-    <div>Desserts</div>
+    <Dessert/>
   )
 }
 
