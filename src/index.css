@@ -44,4 +44,6 @@
     .text-preset-4-bold{
         @apply  text-rose-900 font-semibold leading-[150%] tracking-normal text-sm;
     }
+
+    
   }
