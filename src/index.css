@@ -46,7 +46,7 @@
     }
 
     .add-to-cart-btn{
-        @apply px-6 py-2 flex items-center gap-2  bg-white text-rose-900 border rounded-full border-rose-400 pointer hover:border-red hover:text-red;
+        @apply px-6 py-2 flex items-center gap-2  bg-white text-preset-4-bold border rounded-full border-rose-400 pointer hover:border-red hover:text-red;
     }
 
     

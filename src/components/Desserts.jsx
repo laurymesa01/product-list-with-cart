@@ -3,7 +3,9 @@ import Dessert from './Dessert'
 
 function Desserts() {
   return (
-    <Dessert/>
+    <section className='px-6 py-8'>
+      <Dessert/>
+    </section>
   )
 }
 
