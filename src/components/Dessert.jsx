@@ -11,8 +11,12 @@ function Dessert({dessert}) {
   return (
     <section>
       <div className='relative mb-8 '>
-        <img src={dessert.image.mobile} alt="" className='rounded-md w-full object-cover'/>
-        <button className='add-to-cart-btn absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2'>
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={dessert.image.desktop} />
+          <source media="(min-width: 768px)" srcSet={dessert.image.tablet} />
+          <img src={dessert.image.mobile} alt={dessert.name} className='rounded-md w-full object-cover'/>
+        </picture>
+        <button className='add-to-cart-btn absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 w-max whitespace-nowrap'>
           <img src={addToCartSvg} alt="" className='h-5 w-5'/>
           <span className='text-preset-4-bold text-rose-900'>Add to cart</span>
         </button>
