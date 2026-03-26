@@ -1,6 +1,6 @@
 import React from 'react'
 
-import emptyCart from "../assets/images/illustration-empty-cart.svg";
+import emptyCart from "../../assets/images/illustration-empty-cart.svg";
 
 
 function Cart() {
