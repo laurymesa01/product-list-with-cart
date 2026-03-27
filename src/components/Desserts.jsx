@@ -13,7 +13,7 @@ function Desserts() {
   }, []);
 
   return (
-    <section className='w-full'>
+    <section className='xl:w-2/3'>
       <h1 className='text-preset-1 mb-8'>Desserts</h1>
       <div className='flex flex-col gap-8 md:grid md:grid-cols-3'>
         {desserts.map(dessert => (
