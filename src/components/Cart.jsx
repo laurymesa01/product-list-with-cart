@@ -3,14 +3,14 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 import emptyCart from "../../assets/images/illustration-empty-cart.svg";
-// import removeItem from "../../assets/images/icon-remove-item.svg";
 import carbonNeutral from "../../assets/images/icon-carbon-neutral.svg";
-
 
 
 
 function Cart() {
   const { cart } = useContext(CartContext);
+  const { totalPrice } = useContext(CartContext);
+
 
   const formato = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -48,7 +48,7 @@ function Cart() {
             <div className='mt-8'>
               <div className='flex justify-between items-center'>
                 <p className='text-preset-4 text-rose-900'>Order total</p>
-                <p className='text-preset-2 text-rose-900'>{formato.format(45)}</p>
+                <p className='text-preset-2 text-rose-900'>{formato.format(totalPrice)}</p>
               </div>
               <div className='bg-rose-50 flex justify-center p-4 rounded-md mt-6'>
                 <img src={carbonNeutral} alt="" />
