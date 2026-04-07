@@ -16,13 +16,15 @@ export function CartProvider({ children }) {
     return [...prev, { ...dessert, quantity: 1 }];
   });
 
+
+
   const decreaseQuantity = (id) => setCart(prev => {
-    prev.map(item => {
-      item.id === id
-      ? {...item, quantity: item.quantity - 1}
-      : item
-    })
-    .filter(item => item.quantity > 0)
+      prev.map(item => {
+        item.id === id
+        ? {...item, quantity: item.quantity - 1}
+        : item
+      })
+      .filter(item =>  item.quantity > 0)
   })
 
   const removeFromCart = (id) => {
