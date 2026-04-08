@@ -6,17 +6,14 @@ import emptyCart from "../../assets/images/illustration-empty-cart.svg";
 import carbonNeutral from "../../assets/images/icon-carbon-neutral.svg";
 import OrderConfirmed from './OrderConfirmed';
 
+import { formatPrice } from "../utils/format";
+
 
 
 function Cart() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { cart, totalPrice, removeFromCart, clearCart } = useContext(CartContext);
-
-  const formato = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -40,8 +37,8 @@ function Cart() {
                   <p className='text-preset-4-bold text-rose-900'>{item.name}</p>
                   <div className='flex mt-2'>
                     <p className='text-preset-4-bold text-red'>{item.quantity}x</p>
-                    <p className='text-preset-4 text-rose-500 ml-6'>@ {formato.format(item.price)}</p>
-                    <p className='text-preset-4-bold text-rose-500 ml-2'>{formato.format(item.price * item.quantity)}</p>
+                    <p className='text-preset-4 text-rose-500 ml-6'>@ {formatPrice(item.price)}</p>
+                    <p className='text-preset-4-bold text-rose-500 ml-2'>{formatPrice(item.price * item.quantity)}</p>
                   </div>
                 </div>
                 <button onClick={() => removeFromCart(item.id)}>
@@ -56,7 +53,7 @@ function Cart() {
             <div className='mt-8'>
               <div className='flex justify-between items-center'>
                 <p className='text-preset-4 text-rose-900'>Order total</p>
-                <p className='text-preset-2 text-rose-900'>{formato.format(totalPrice)}</p>
+                <p className='text-preset-2 text-rose-900'>{formatPrice(totalPrice)}</p>
               </div>
               <div className='bg-rose-50 flex justify-center p-4 rounded-md mt-6'>
                 <img src={carbonNeutral} alt="" />

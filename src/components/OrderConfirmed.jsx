@@ -3,17 +3,14 @@ import { CartContext } from '../context/CartContext';
 
 import orderConfirmed from "../../assets/images/icon-order-confirmed.svg";
 
+import { formatPrice } from "../utils/format";
+
 
 function OrderConfirmed({ isOpen, onClose }) {
 
   const { cart, totalPrice} = useContext(CartContext);
 
   if (!isOpen) return null;
-
-  const formato = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
 
   return (
     <section className='fixed inset-0 bg-black/50 flex items-center justify-center'>
@@ -30,16 +27,16 @@ function OrderConfirmed({ isOpen, onClose }) {
                   <p className='text-preset-4-bold text-rose-900'>{item.name}</p>
                   <div className='flex items-center gap-2 mt-2'>
                     <p className='text-preset-4-bold text-red'>{item.quantity}x</p>
-                    <p className='text-preset-4 text-rose-500'>@ {formato.format(item.price)}</p>
+                    <p className='text-preset-4 text-rose-500'>@ {formatPrice(item.price)}</p>
                   </div>
                 </div>
               </div>
-              <p className='text-preset-3 text-rose-900'>{formato.format(item.price * item.quantity)}</p>
+              <p className='text-preset-3 text-rose-900'>{formatPrice(item.price * item.quantity)}</p>
             </div>
           ))}
           <div className='flex justify-between items-center mt-5'>
             <p className='text-preset-4 text-rose-900'>Order Total</p>
-            <h2 className='text-preset-2 text-rose-900'>{formato.format(totalPrice)}</h2>
+            <h2 className='text-preset-2 text-rose-900'>{formatPrice(totalPrice)}</h2>
           </div>
         </div>
         <button className='mt-4 confirm-order-btn' onClick={onClose}>Start new order</button>

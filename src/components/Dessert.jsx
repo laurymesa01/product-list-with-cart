@@ -5,18 +5,15 @@ import { CartContext } from "../context/CartContext";
 
 import addToCartSvg from "../../assets/images/icon-add-to-cart.svg";
 
+import { formatPrice } from "../utils/format";
+
+
 
 function Dessert({dessert}) {
 
   const { addToCart, cart, removeFromCart } = useContext(CartContext);
   const dessertIsInCart = cart.find(item => item.id === dessert.id);
   
-
-  const formato = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
-
   
   return (
     <section>
@@ -54,7 +51,7 @@ function Dessert({dessert}) {
 
       <p className='text-preset-4 text-rose-500 mb-1'>{dessert.category}</p>
       <p className='text-preset-3 text-rose-900 mb-1'>{dessert.name}</p>
-      <p className='text-preset-3 text-red'>{formato.format(dessert.price)}</p>
+      <p className='text-preset-3 text-red'>{formatPrice(dessert.price)}</p>
     </section>
   )
 }
