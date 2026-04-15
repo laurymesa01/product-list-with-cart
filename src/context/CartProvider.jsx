@@ -5,10 +5,10 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (dessert) => setCart(prev => {
-    const existe = prev.find(item => item.id === dessert.id);
+    const existe = prev.find(item => item.name === dessert.name);
     if (existe) {
       return prev.map(item => 
-        item.id === dessert.id
+        item.name === dessert.name
         ? { ...item, quantity: item.quantity + 1 }
         : item
       )
@@ -17,24 +17,22 @@ export function CartProvider({ children }) {
   });
 
 
-
-
-  const removeFromCart = (id) => {
-    const dessert = cart.find(item => item.id === id);
+  const removeFromCart = (name) => {
+    const dessert = cart.find(item => item.name === name);
     if (dessert.quantity > 1) {
       setCart(prev => prev.map(item => 
-        item.id === id
+        item.name === name
         ? { ...item, quantity: item.quantity - 1 }
         : item
       ));
       return;
     }
     else {
-      setCart(prev => prev.filter(item => item.id !== id));
+      setCart(prev => prev.filter(item => item.name !== name));
     }
   };
 
-  const removeProduct = (id) => setCart(prev => prev.filter(item => item.id !== id));
+  const removeProduct = (name) => setCart(prev => prev.filter(item => item.name !== name));
 
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 

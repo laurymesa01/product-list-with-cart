@@ -41,7 +41,7 @@ function Cart() {
                     <p className='text-preset-4-bold text-rose-500 ml-2'>{formatPrice(item.price * item.quantity)}</p>
                   </div>
                 </div>
-                <button onClick={() => removeProduct(item.id)}>
+                <button onClick={() => removeProduct(item.name)}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 10 10" className='text-rose-400 border rounded-full border-rose-400 p-px cursor-pointer hover:border-rose-900 hover:text-rose-900'>
                     <path fill="currentColor" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/>
                   </svg>

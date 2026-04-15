@@ -32,12 +32,12 @@ function Dessert({dessert}) {
           </button>
         ): (
           <div className='cart-quantity absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2  whitespace-nowrap transition'>
-            <button className='h-3.75 w-3.75 p-0.5 flex justify-center items-center border rounded-full border-white cursor-pointer hover:bg-white group' onClick={() => removeFromCart(dessert.id)}>
+            <button className='h-3.75 w-3.75 p-0.5 flex justify-center items-center border rounded-full border-white cursor-pointer hover:bg-white group' onClick={() => removeFromCart(dessert.name)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2" className='text-white group-hover:text-red'>
                 <path fill="currentColor" d="M0 .375h10v1.25H0V.375Z"/>
               </svg>
             </button>
-            <span className='text-preset-4-bold text-white'>{cart.find(item => item.id === dessert.id)?.quantity || 0}</span>
+            <span className='text-preset-4-bold text-white'>{cart.find(item => item.name === dessert.name)?.quantity || 0}</span>
             <button className='h-3.75 w-3.75 p-0.5 border flex justify-center rounded-full border-white cursor-pointer hover:bg-white group'  onClick={() => addToCart(dessert)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10" className='text-white group-hover:text-red'>
                 <path fill="currentColor" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/>
