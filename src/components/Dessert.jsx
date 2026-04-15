@@ -12,7 +12,7 @@ import { formatPrice } from "../utils/format";
 function Dessert({dessert}) {
 
   const { addToCart, cart, removeFromCart } = useContext(CartContext);
-  const dessertIsInCart = cart.find(item => item.id === dessert.id);
+  const dessertIsInCart = cart.find(item => item.name === dessert.name);
   
   
   return (

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Dessert from './Dessert'
-import Cart from './Cart'
+import { api } from "../services/api";
 
 
 function Desserts() {
   const [desserts, setDesserts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/desserts")
-      .then(res => res.json())
-      .then(data => setDesserts(data));
+    api.getDesserts().then(setDesserts);
   }, []);
 
   return (
@@ -17,7 +15,7 @@ function Desserts() {
       <h1 className='text-preset-1 mb-8'>Desserts</h1>
       <div className='flex flex-col gap-8 md:grid md:grid-cols-3'>
         {desserts.map(dessert => (
-          <Dessert key={dessert.id} dessert = {dessert}/>
+          <Dessert key={dessert.name} dessert = {dessert}/>
         ))}
       </div>
     </section>
