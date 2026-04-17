@@ -18,7 +18,7 @@ function OrderConfirmed({ isOpen, onClose }) {
         <img src={orderConfirmed} alt="" />
         <h1 className='text-preset-1 mt-4'>Order confirmed</h1>
         <p className='text-rose-500 mt-3'>We hope you enjoy your food!</p>
-        <div className='bg-rose-50 p-4 rounded-md mt-4'>
+        <div className='max-h-80 bg-rose-50 p-4 rounded-md mt-4 overflow-y-auto'>
           {cart.map((item, id) => (
             <div className='flex justify-between items-center border-b border-rose-100 p-3' key={id}>
               <div className='flex items-center'>
