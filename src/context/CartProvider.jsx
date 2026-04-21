@@ -19,6 +19,7 @@ export function CartProvider({ children }) {
 
   const removeFromCart = (name) => {
     const dessert = cart.find(item => item.name === name);
+    if (!dessert) return;
     if (dessert.quantity > 1) {
       setCart(prev => prev.map(item => 
         item.name === name

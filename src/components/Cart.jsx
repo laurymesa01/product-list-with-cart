@@ -22,7 +22,7 @@ function Cart() {
 
   return (
     <>
-      <section className='w-full bg-white p-6 xl:flex-1'>
+      <aside className='w-full bg-white p-6 xl:flex-1'>
         <h2 className='text-preset-2 text-red mb-6'>Your Cart ({cart.length})</h2>
         {cart.length === 0 ? (
           <div className='flex flex-col items-center mb-6'>
@@ -31,8 +31,8 @@ function Cart() {
           </div>
         ): (
           <>
-            { cart.map((item, id) => (
-              <div key={id} className='flex justify-between items-center py-3 border-b border-rose-100'>
+            { cart.map((item, name) => (
+              <div key={name} className='flex justify-between items-center py-3 border-b border-rose-100'>
                 <div>
                   <p className='text-preset-4-bold text-rose-900'>{item.name}</p>
                   <div className='flex mt-2'>
@@ -64,7 +64,7 @@ function Cart() {
           </>
 
         )}
-      </section>
+      </aside>
       {isModalOpen && <OrderConfirmed isOpen ={isModalOpen} onClose={closeModal} />}
     </>
 
