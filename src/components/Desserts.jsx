@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import Dessert from './Dessert'
-import { api } from "../services/api";
 
 
 function Desserts() {
   const [desserts, setDesserts] = useState([]);
 
   useEffect(() => {
-    api.getDesserts().then(setDesserts);
+    fetch("/data/data.json")
+      .then(res => res.json())
+      .then(data => setDesserts(data.desserts));
   }, []);
 
+  console.log('DESSERTS',desserts);
+  
   return (
     <section className='xl:w-2/3'>
       <h1 className='text-preset-1 mb-8'>Desserts</h1>
